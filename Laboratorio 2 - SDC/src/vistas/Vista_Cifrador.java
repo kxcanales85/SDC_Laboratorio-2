@@ -6,7 +6,7 @@
 package vistas;
 
 import javax.swing.ImageIcon;
-
+import main.Control_Cifrador;
 /**
  *
  * @author Kevin Canales
@@ -53,6 +53,11 @@ public class Vista_Cifrador extends javax.swing.JFrame {
         jLabel2.setText("Ingrese la clave para encriptar");
 
         jButton1.setText("Encriptar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jPasswordField1.setText("jPasswordField1");
         jPasswordField1.setToolTipText("Clave de encriptación");
@@ -128,6 +133,14 @@ public class Vista_Cifrador extends javax.swing.JFrame {
     private void jPasswordField1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField1MousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1MousePressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Control_Cifrador CE = new Control_Cifrador();
+        String mensaje = jTextPane1.getText();
+        String clave = jPasswordField1.getText();
+        CE.realizarEncriptacion(clave, mensaje);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
