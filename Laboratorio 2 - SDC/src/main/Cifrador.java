@@ -51,16 +51,43 @@ public class Cifrador {
                 k++;
             }
             msj_aux = Arrays.toString(auxiliar);
-            for(int l = 1; l <=22; l = l+3){
+            for(int l = 1; l <=msj_aux.length()-2; l = l+3){
                 aux[p] = msj_aux.charAt(l);
                 p++;
-                if(l==22){p=0;}
+                if(l==msj_aux.length()-2){p=0;}
                 
             }
             n = Integer.parseInt(String.valueOf(aux),2);
             mensaje_final[i] = (char)n;
         }
         return String.valueOf(mensaje_final);
+    }
+   
+    
+    public String mensajeCifrado(int[] msj_cifrado){
+        
+        String msj_aux = Arrays.toString(msj_cifrado);
+        char[] mensaje = new char[msj_cifrado.length];
+        int k = 0;
+        
+        for(int i = 1; i<=msj_aux.length()-2; i=i+3){
+            mensaje[k] = msj_aux.charAt(i);
+            k++;
+        }
+        
+        return String.valueOf(mensaje);
+    }
+    
+    public int[] string_to_int(String mensaje){
+        
+        int[] msj = new int[mensaje.length()];
+        
+        for(int i = 0; i<mensaje.length(); i++){
+            msj[i] = Integer.parseInt(String.valueOf(mensaje.charAt(i)));
+        }
+        
+        return msj;
+        
     }
     
     public int[] encriptar(int[] clave, int[] mensaje, int tamano){

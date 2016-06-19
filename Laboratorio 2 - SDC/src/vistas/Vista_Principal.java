@@ -125,7 +125,8 @@ public class Vista_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
+        Vista_Descifrador VD = new Vista_Descifrador();
+        VD.show();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
