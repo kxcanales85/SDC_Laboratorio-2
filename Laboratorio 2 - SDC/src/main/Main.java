@@ -5,6 +5,7 @@
  */
 package main;
 import java.util.Arrays;
+import javax.naming.BinaryRefAddr;
 import vistas.Vista_Principal;
 
 /**
@@ -50,8 +51,8 @@ public class Main {
             System.out.print(fin_nuevo[i]);
         }
         System.out.println();
-        String[] valor_texto = C.bin_to_text(fin_nuevo);
-        System.out.println(Arrays.toString(valor_texto));
+        String valor_texto = C.bin_to_text(fin_nuevo);
+        System.out.println(valor_texto);
     }
     
 }

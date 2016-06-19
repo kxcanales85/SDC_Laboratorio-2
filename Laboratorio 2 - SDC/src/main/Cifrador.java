@@ -5,6 +5,8 @@
  */
 package main;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Fernando
@@ -37,12 +39,28 @@ public class Cifrador {
         return mensaje_binario;
     }
     
-    public String[] bin_to_text(int[] mensaje){
-        String[] mensaje_final = null;
-        for(int i = 0; i < mensaje.length; i++){
-            mensaje_final[i] = new Character((char)mensaje[i]).toString();
+    public String bin_to_text(int[] mensaje){
+        int n,k=0,p=0;
+        String msj_aux;
+        char[] aux = new char[8];
+        char[] mensaje_final = new char[(mensaje.length)/8];
+        int[] auxiliar = new int[8];
+        for(int i = 0; i < (mensaje.length)/8; i++){
+            for(int j = 0;j < 8; j++){
+                auxiliar[j] = mensaje[k];
+                k++;
+            }
+            msj_aux = Arrays.toString(auxiliar);
+            for(int l = 1; l <=22; l = l+3){
+                aux[p] = msj_aux.charAt(l);
+                p++;
+                if(l==22){p=0;}
+                
+            }
+            n = Integer.parseInt(String.valueOf(aux),2);
+            mensaje_final[i] = (char)n;
         }
-        return mensaje_final;
+        return String.valueOf(mensaje_final);
     }
     
     public int[] encriptar(int[] clave, int[] mensaje, int tamano){
