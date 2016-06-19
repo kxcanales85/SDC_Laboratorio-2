@@ -37,6 +37,14 @@ public class Cifrador {
         return mensaje_binario;
     }
     
+    public String[] bin_to_text(int[] mensaje){
+        String[] mensaje_final = null;
+        for(int i = 0; i < mensaje.length; i++){
+            mensaje_final[i] = new Character((char)mensaje[i]).toString();
+        }
+        return mensaje_final;
+    }
+    
     public int[] encriptar(int[] clave, int[] mensaje, int tamano){
         int resto = mensaje.length % tamano*8;
         int[] mensaje_codificado = new int[mensaje.length];
