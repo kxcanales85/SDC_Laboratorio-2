@@ -5,6 +5,7 @@
  */
 package vistas;
 
+import javax.swing.ImageIcon;
 import main.Control_Cifrador;
 /**
  *
@@ -16,6 +17,8 @@ public class Vista_Descifrador extends javax.swing.JFrame {
      * Creates new form Vista_Descifrador
      */
     public Vista_Descifrador() {
+        setIconImage(new ImageIcon(getClass().getResource("img/Lock-Unlock-icon.png")).getImage());
+        setLocation(550, 350);
         initComponents();
     }
 
@@ -34,10 +37,11 @@ public class Vista_Descifrador extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Descifrador");
+        setAlwaysOnTop(true);
+        setResizable(false);
 
         jTextPane1.setToolTipText("Acá debe ingresar el mensaje que desea desencriptar");
         jScrollPane1.setViewportView(jTextPane1);
@@ -46,7 +50,7 @@ public class Vista_Descifrador extends javax.swing.JFrame {
 
         jLabel2.setText("Ingrese clave de desencriptación");
 
-        jPasswordField1.setToolTipText("Clave de desencriptación");
+        jPasswordField1.setToolTipText("Clave de desencriptación. Es la misma usada para encriptar");
 
         jButton1.setText("Desencriptar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -54,8 +58,6 @@ public class Vista_Descifrador extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jLabel3.setText("Ingrese cantidad de bloques");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,16 +69,8 @@ public class Vista_Descifrador extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(73, 73, 73)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 230, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 403, Short.MAX_VALUE)
+                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -100,11 +94,7 @@ public class Vista_Descifrador extends javax.swing.JFrame {
                         .addGap(32, 32, 32))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel3)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -115,7 +105,7 @@ public class Vista_Descifrador extends javax.swing.JFrame {
         Control_Cifrador CE = new Control_Cifrador();
         String mensaje = jTextPane1.getText();
         String clave = jPasswordField1.getText();
-        int tamano = Integer.parseInt(jTextField1.getText());
+        int tamano = clave.length();
         
         int[] mensaje_bin = CE.convertirStringAInt(mensaje);
         int[] clave_bin = CE.textoABinario(clave);
@@ -166,10 +156,8 @@ public class Vista_Descifrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

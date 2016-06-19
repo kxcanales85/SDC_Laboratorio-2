@@ -95,7 +95,7 @@ public class Cifrador {
         int[] mensaje_codificado = new int[mensaje.length];
         int indice = 0;
         if(resto != 0){
-            System.out.println("Hay que rellenar con 0's");
+            //System.out.println("Hay que rellenar con 0's");
             int bits_faltantes = (tamano*8) - resto;
             int[] mensaje_final;
             mensaje_final = new int[mensaje.length+bits_faltantes];
@@ -114,7 +114,7 @@ public class Cifrador {
             }
         }
         else{
-            System.out.println("No debemos hacer nada");
+            //System.out.println("No debemos hacer nada");
             int k = 0; /*Indice para la clave*/
             for(int i = 0; i < mensaje_codificado.length; i++){
                 mensaje_codificado[indice] = mensaje[i] ^ clave[k];
@@ -125,6 +125,7 @@ public class Cifrador {
                 }
             }
         }
+        
         return mensaje_codificado;
     }
 }
