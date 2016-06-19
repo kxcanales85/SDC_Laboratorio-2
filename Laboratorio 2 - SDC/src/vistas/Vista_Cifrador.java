@@ -139,7 +139,7 @@ public class Vista_Cifrador extends javax.swing.JFrame {
         Control_Cifrador CE = new Control_Cifrador();
         String mensaje = jTextPane1.getText();
         String clave = jPasswordField1.getText();
-        CE.realizarEncriptacion(clave, mensaje);
+        CE.realizarEncriptacion(clave, mensaje, 5);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

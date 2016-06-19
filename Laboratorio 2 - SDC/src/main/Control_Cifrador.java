@@ -5,7 +5,6 @@
  */
 package main;
 
-import main.Cifrador;
 /**
  *
  * @author Fernando
@@ -14,7 +13,7 @@ public class Control_Cifrador {
     
     Cifrador encriptador = new Cifrador();
     
-    public void realizarEncriptacion(String clave, String mensaje){
-        encriptador.encriptar(clave, mensaje);
+    public void realizarEncriptacion(String clave, String mensaje, int tamano){
+        //encriptador.encriptar(clave, mensaje, tamano);
     }
 }
