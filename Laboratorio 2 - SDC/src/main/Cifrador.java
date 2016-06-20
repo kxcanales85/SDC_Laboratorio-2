@@ -91,6 +91,7 @@ public class Cifrador {
     }
     
     public int[] encriptar(int[] clave, int[] mensaje, int tamano){
+        double startTime = System.nanoTime();
         int resto = mensaje.length % tamano*8;
         int[] mensaje_codificado = new int[mensaje.length];
         int indice = 0;
@@ -125,6 +126,9 @@ public class Cifrador {
                 }
             }
         }
+        double endTime = System.nanoTime();
+        double tiempo_total = (endTime-startTime)/1000000;
+        System.out.println("Tiempo de ejecución: " +tiempo_total);
         
         return mensaje_codificado;
     }
