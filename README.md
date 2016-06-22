@@ -6,4 +6,4 @@ Para ejecutar el laboratorio, se debe importar el proyecto completo del IDE Netb
 
 Una vez importado, se debe ejecutar la clase main, la cual desplegará la vista principal de nuestro programa. En la vista de "Encriptar" se debe ingresar un mensaje para encriptar y luego la clave de encriptación.
 
-En la ventana de "Desencriptar" se debe ingresar el mensaje encriptado (el mismo que entrega la ventana de "Encriptar") y la clave con la cual se encrito anteriormente. Si la clave corresponde, se mostrará el mensaje original.
+En la ventana de "Desencriptar" se debe ingresar el mensaje encriptado (el mismo que entrega la ventana de "Encriptar") y la clave con la cual se encriptó anteriormente. Si la clave corresponde, se mostrará el mensaje original.
